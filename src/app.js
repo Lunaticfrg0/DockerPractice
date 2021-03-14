@@ -1,6 +1,5 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const path = require('path');
 const MongoClient = require('mongodb').MongoClient;
 
 const app = express();
@@ -10,8 +9,6 @@ app.use(bodyParser.urlencoded({
   }));
  app.use(bodyParser.json());
   
-
-
 app.get("/", (req, res) => {
     
     MongoClient.connect("mongodb://admin:password@localhost:27017", {useNewUrlParser: true, useUnifiedTopology: true}, (error, client) =>{
